@@ -98,7 +98,6 @@
     <script src="{{ asset('assets/js/plugins/sweetalert.js') }}"></script>
 
     <script>
-        // 1. Cancel Confirmation
         function confirmCancel(event) {
             event.preventDefault();
             const redirectUrl = event.currentTarget.getAttribute('href');
@@ -125,7 +124,7 @@
 
             if (form) {
                 form.addEventListener('submit', function(event) {
-                    event.preventDefault(); // Pause form submission
+                    event.preventDefault();
 
                     Swal.fire({
                         title: 'Save Data?',
@@ -145,7 +144,7 @@
                                 }
                             });
 
-                            form.submit(); // Resume form submission
+                            form.submit();
                         }
                     });
                 });

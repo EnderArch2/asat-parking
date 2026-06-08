@@ -100,7 +100,6 @@
     <script src="{{ asset('assets/js/plugins/sweetalert.js') }}"></script>
 
 <script>
-    // 1. Cancel Confirmation
     function confirmCancel(event) {
         event.preventDefault();
         const redirectUrl = event.currentTarget.getAttribute('href');
@@ -147,7 +146,7 @@
                             }
                         });
 
-                        form.submit(); // Resume form submission
+                        form.submit();
                     }
                 });
             });
