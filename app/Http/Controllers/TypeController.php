@@ -43,7 +43,7 @@ class TypeController extends Controller
 
         VehicleType::create($validated);
 
-        return redirect()->route('type.index')->with('success', 'New Vehicle Type was successfully saved!');
+        return redirect()->route('vehicle_type.index')->with('success', 'New Vehicle Type was successfully saved!');
     }
 
     /**

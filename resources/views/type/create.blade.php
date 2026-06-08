@@ -22,20 +22,17 @@
                         {{-- INPUT NAME --}}
                         <label>Vehicle Name</label>
                         <div class="mb-3">
-                            {{-- <input type="text" name="location_name" id="location_name"
-                                class="form-control @error('name') is-invalid @enderror" placeholder="ex. Gedung A"
-                                value="{{ old('location_name') }}" required autocomplete="off"> --}}
-                            <select name="vehicle_name" class="form-control">
+                            <select name="jenis" class="form-control @error('jenis') is-invalid @enderror" required>
                                 <option value="">Select your Vehicle</option>
-                                <option value="motorcycle">Motorcycle</option>
-                                <option value="car">Car</option>
-                                <option value="other">Other</option>
+                                <option value="motorcycle" {{ old('jenis') == 'motorcycle' ? 'selected' : '' }}>Motorcycle</option>
+                                <option value="car" {{ old('jenis') == 'car' ? 'selected' : '' }}>Car</option>
+                                <option value="other" {{ old('jenis') == 'other' ? 'selected' : '' }}>Other</option>
                             </select>
                             {{-- Container Error Realtime --}}
-                            <small id="name-error-msg" class="text-danger fw-bold admin-error-msg"></small>
+                            <small id="jenis-error-msg" class="text-danger fw-bold admin-error-msg"></small>
 
                             {{-- Error Laravel Bawaan (Backup) --}}
-                            @error('location_name')
+                            @error('jenis')
                                 <small class="text-danger">{{ $message }}</small>
                             @enderror
                         </div>
@@ -43,11 +40,11 @@
                         <label>First Hour Charges</label>
                         <div class="mb-3">
                             <input type="number" name="perjam_pertama" id="perjam_pertama"
-                                class="form-control @error('name') is-invalid @enderror" placeholder="ex. 3"
+                                class="form-control @error('perjam_pertama') is-invalid @enderror" placeholder="ex. 3"
                                 value="{{ old('perjam_pertama') }}" required autocomplete="off">
 
                             {{-- Container Error Realtime --}}
-                            <small id="name-error-msg" class="text-danger fw-bold admin-error-msg"></small>
+                            <small id="perjam_pertama-error-msg" class="text-danger fw-bold admin-error-msg"></small>
 
                             {{-- Error Laravel Bawaan (Backup) --}}
                             @error('perjam_pertama')
@@ -58,11 +55,11 @@
                         <label>Next Hourly Charges</label>
                         <div class="mb-3">
                             <input type="number" name="perjam_berikutnya" id="perjam_berikutnya"
-                                class="form-control @error('name') is-invalid @enderror" placeholder="ex. 3"
+                                class="form-control @error('perjam_berikutnya') is-invalid @enderror" placeholder="ex. 3"
                                 value="{{ old('perjam_berikutnya') }}" required autocomplete="off">
 
                             {{-- Container Error Realtime --}}
-                            <small id="name-error-msg" class="text-danger fw-bold admin-error-msg"></small>
+                            <small id="perjam_berikutnya-error-msg" class="text-danger fw-bold admin-error-msg"></small>
 
                             {{-- Error Laravel Bawaan (Backup) --}}
                             @error('perjam_berikutnya')
@@ -73,11 +70,11 @@
                         <label>Max Cost Per Day</label>
                         <div class="mb-3">
                             <input type="number" name="max_perhari" id="max_perhari"
-                                class="form-control @error('name') is-invalid @enderror" placeholder="ex. 3"
-                                value="{{ old('max_oter') }}" required autocomplete="off">
+                                class="form-control @error('max_perhari') is-invalid @enderror" placeholder="ex. 3"
+                                value="{{ old('max_perhari') }}" required autocomplete="off">
 
                             {{-- Container Error Realtime --}}
-                            <small id="name-error-msg" class="text-danger fw-bold admin-error-msg"></small>
+                            <small id="max_perhari-error-msg" class="text-danger fw-bold admin-error-msg"></small>
 
                             {{-- Error Laravel Bawaan (Backup) --}}
                             @error('max_perhari')
